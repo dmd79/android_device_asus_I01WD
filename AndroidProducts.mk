@@ -1,8 +1,8 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/device.mk \
-    $(LOCAL_DIR)/aosp_zenfone6.mk
+    $(LOCAL_DIR)/aosp_I01WD.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_zenfone6-user \
-    aosp_zenfone6-userdebug \
-    aosp_zenfone6-eng
+    aosp_I01WD-user \
+    aosp_I01WD-userdebug \
+    aosp_I01WD-eng
