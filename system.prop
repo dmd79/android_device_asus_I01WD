@@ -182,10 +182,6 @@ qemu.hw.mainkeys=0
 persist.vendor.service.bt.iotinfo.report.enable=true
 # ASUS_BSP "Enable IOT logging"---
 
-#Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.qualcomm.saltproject2,com.asus.camera
-#vendor.camera.aux.asus.package_contain=com.asus
-
 #enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
 
