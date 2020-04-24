@@ -360,6 +360,7 @@ PRODUCT_HOST_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-# WiFi Display
+# WiFi
 PRODUCT_PACKAGES += \
-    libnl
+    libnl \
+    WifiOverlay
