@@ -72,6 +72,7 @@ QCOM_BT_USE_BTNV := true
 # charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BUILD_BROKEN_DUP_RULES := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
