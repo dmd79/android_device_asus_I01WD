@@ -3,3 +3,7 @@
 allow platform_app app_data_file:file { execute };
 allow platform_app rs_exec:file { execute execute_no_trans r_file_perms };
 allow platform_app sysfs_graphics:file { getattr open read };
+
+# LockScreen Charging
+allow platform_app sysfs_battery_supply:dir { search };
+allow platform_app sysfs_battery_supply:file { getattr open read };
