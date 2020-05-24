@@ -165,4 +165,5 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/qcom/sepolicy/qva/private
 
 # Treble
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
 BOARD_VNDK_VERSION := current
