@@ -229,6 +229,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                 case Constants.ACTION_VOLUME_UP:
                     volumeUp();
                     break;
+                case Constants.ACTION_FM_RADIO:
+                    fmRadio();
+                    break;
             }
         }
     }
@@ -314,6 +317,14 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     private void volumeUp() {
         mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
         mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_RAISE, 0);
+        doHapticFeedback();
+    }
+
+    private void fmRadio() {
+        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
+        Intent LaunchIntent = mContext.getPackageManager().getLaunchIntentForPackage("com.asus.fmradio");
+        mContext.startActivity(LaunchIntent);
         doHapticFeedback();
     }
 
