@@ -27,32 +27,31 @@ import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
-public class TiltSensor implements SensorEventListener {
+public class PickupSensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "TiltSensor";
-
-    private static final String TILT_SENSOR = "android.sensor.tilt_detector";
+    private static final String TAG = "PickupSensor";
 
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
 
-    private final SensorManager mSensorManager;
-    private final Sensor mSensor;
-    private final Context mContext;
-    private final ExecutorService mExecutorService;
+    private SensorManager mSensorManager;
+    private Sensor mSensor;
+    private Context mContext;
+    private ExecutorService mExecutorService;
 
     private long mEntryTimestamp;
 
-    public TiltSensor(Context context) {
+    public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = DozeUtils.getSensor(mSensorManager, TILT_SENSOR);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
-    private void submit(Runnable runnable) {
-        mExecutorService.submit(runnable);
+    private Future<?> submit(Runnable runnable) {
+        return mExecutorService.submit(runnable);
     }
 
     @Override
@@ -66,7 +65,7 @@ public class TiltSensor implements SensorEventListener {
 
         mEntryTimestamp = SystemClock.elapsedRealtime();
 
-        if (event.values[0] == 0) {
+        if (event.values[0] == 1) {
             DozeUtils.launchDozePulse(mContext);
         }
     }

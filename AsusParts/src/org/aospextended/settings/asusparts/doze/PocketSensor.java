@@ -24,37 +24,23 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+public class PocketSensor implements SensorEventListener {
 
-public class ProximitySensor implements SensorEventListener {
+    private static final boolean DEBUG = true;
+    private static final String TAG = "PocketSensor";
 
-    private static final boolean DEBUG = false;
-    private static final String TAG = "ProximitySensor";
-
-    // Maximum time for the hand to cover the sensor: 1s
-    private static final int HANDWAVE_MAX_DELTA_NS = 1000 * 1000 * 1000;
-
-    // Minimum time until the device is considered to have been in the pocket: 2s
-    private static final int POCKET_MIN_DELTA_NS = 2000 * 1000 * 1000;
-
-    private final SensorManager mSensorManager;
-    private final Sensor mSensor;
-    private final Context mContext;
-    private final ExecutorService mExecutorService;
+    private SensorManager mSensorManager;
+    private Sensor mSensor;
+    private Context mContext;
 
     private boolean mSawNear = false;
     private long mInPocketTime = 0;
 
-    public ProximitySensor(Context context) {
+    public PocketSensor(Context context) {
         mContext = context;
-        mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false);
-        mExecutorService = Executors.newSingleThreadExecutor();
-    }
-
-    private void submit(Runnable runnable) {
-        mExecutorService.submit(runnable);
+        mSensorManager = (SensorManager)
+                mContext.getSystemService(Context.SENSOR_SERVICE);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
     }
 
     @Override
@@ -72,14 +58,9 @@ public class ProximitySensor implements SensorEventListener {
 
     private boolean shouldPulse(long timestamp) {
         long delta = timestamp - mInPocketTime;
-
-        if (DozeUtils.isHandwaveGestureEnabled(mContext) &&
-                DozeUtils.isPocketGestureEnabled(mContext)) {
+        if ((DozeUtils.isPocketGestureEnabled(mContext)) && (delta > 3000000000L)) { // Pocket must be more than 3 seconds
+            Log.d(TAG, "pocket unlock");
             return true;
-        } else if (DozeUtils.isHandwaveGestureEnabled(mContext)) {
-            return delta < HANDWAVE_MAX_DELTA_NS;
-        } else if (DozeUtils.isPocketGestureEnabled(mContext)) {
-            return delta >= POCKET_MIN_DELTA_NS;
         }
         return false;
     }
@@ -89,18 +70,14 @@ public class ProximitySensor implements SensorEventListener {
         /* Empty */
     }
 
-    void enable() {
+    protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
-        submit(() -> {
-            mSensorManager.registerListener(this, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-        });
+        mSensorManager.registerListener(this, mSensor,
+                SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    void disable() {
+    protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
-        submit(() -> {
-            mSensorManager.unregisterListener(this, mSensor);
-        });
+        mSensorManager.unregisterListener(this, mSensor);
     }
 }
