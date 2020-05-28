@@ -188,6 +188,12 @@ public class TouchscreenGestureSettings extends PreferenceActivity
                         return R.drawable.ic_gesture_action_previous_track;
                     case Constants.ACTION_NEXT_TRACK:
                         return R.drawable.ic_gesture_action_next_track;
+                    case Constants.ACTION_VOLUME_DOWN:
+                        return R.drawable.ic_gesture_action_volume_down;
+                    case Constants.ACTION_VOLUME_UP:
+                        return R.drawable.ic_gesture_action_volume_up;
+                    case Constants.ACTION_CAMERA_MOTOR:
+                        return R.drawable.ic_gesture_action_camera;
                     case Constants.ACTION_FM_RADIO:
                         return R.drawable.ic_gesture_action_fm_radio;
                     default:
