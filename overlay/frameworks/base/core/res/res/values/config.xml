@@ -648,4 +648,7 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.aospextended.settings.asusparts.touch.TouchKeyHandler</item>
     </string-array>
+
+    <!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
 </resources>

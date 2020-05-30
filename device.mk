@@ -263,6 +263,10 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    lineage.livedisplay@2.0-service-sdm
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.asus_msmnile

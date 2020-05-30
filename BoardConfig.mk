@@ -162,7 +162,8 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
+    device/qcom/sepolicy/qva/private \
+    device/aosp/sepolicy/qcom/system
 
 # Treble
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
