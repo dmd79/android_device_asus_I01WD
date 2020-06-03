@@ -26,7 +26,6 @@ import androidx.preference.PreferenceManager;
 
 import org.aospextended.settings.asusparts.doze.DozeUtils;
 import org.aospextended.settings.asusparts.touch.TouchscreenGestureSettings;
-import org.aospextended.settings.asusparts.vibration.VibratorStrengthPreference;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -40,7 +39,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         DozeUtils.checkDozeService(context);
         TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
-        VibratorStrengthPreference.restore(context);
     }
 
     private boolean hasRestoredTunable(Context context) {
