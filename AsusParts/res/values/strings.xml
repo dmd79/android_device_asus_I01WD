@@ -80,11 +80,6 @@
     <!-- Device specific settings -->
     <string name="device_settings_app_name">Advanced settings</string>
 
-    <!-- Vibration Slider -->
-    <string name="vibrator_intensity_control">Vibration</string>
-    <string name="vib_strength_title_head">Vibration Strength</string>
-    <string name="vib_strength_summary_head">Define the strength of the vibrator</string>
-
     <!-- Screen off Gestures : Input -->
     <string name="touchscreen_gesture_category">Key</string>
     <string name="touchscreen_gesture_settings_title">Key actions</string>

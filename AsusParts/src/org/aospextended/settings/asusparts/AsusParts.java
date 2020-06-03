@@ -29,7 +29,6 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
 
 import org.aospextended.settings.asusparts.doze.DozeSettingsActivity;
-import org.aospextended.settings.asusparts.vibration.VibratorStrengthPreference;
 
 public class AsusParts extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -46,9 +45,6 @@ public class AsusParts extends PreferenceFragment implements
                 return true;
             }
         });
-
-        VibratorStrengthPreference mVibratorStrength = findPreference("vib_strength");
-        mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
     }
 
     @Override
