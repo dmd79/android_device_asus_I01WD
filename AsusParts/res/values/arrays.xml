@@ -20,6 +20,15 @@
     <!-- Screen off Gestures -->
     <string-array name="touchscreen_gesture_action_entries">
         <item>@string/touchscreen_gesture_action_do_nothing</item>
+        <item>@string/touchscreen_gesture_action_back</item>
+        <item>@string/touchscreen_gesture_action_home</item>
+        <item>@string/touchscreen_gesture_action_recents</item>
+        <item>@string/touchscreen_gesture_action_up</item>
+        <item>@string/touchscreen_gesture_action_down</item>
+        <item>@string/touchscreen_gesture_action_left</item>
+        <item>@string/touchscreen_gesture_action_right</item>
+        <item>@string/touchscreen_gesture_action_assistant</item>
+        <item>@string/touchscreen_gesture_action_screen_off</item>
         <item>@string/touchscreen_gesture_action_flashlight</item>
         <item>@string/touchscreen_gesture_action_camera</item>
         <item>@string/touchscreen_gesture_action_browser</item>
@@ -50,5 +59,14 @@
         <item>11</item>
         <item>12</item>
         <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
     </string-array>
 </resources>

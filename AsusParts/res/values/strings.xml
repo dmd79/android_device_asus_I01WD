@@ -107,6 +107,15 @@
 
     <!-- Screen off Gestures : Actions -->
     <string name="touchscreen_gesture_action_dialog_title">Gesture action</string>
+    <string name="touchscreen_gesture_action_back">Back</string>
+    <string name="touchscreen_gesture_action_home">Home</string>
+    <string name="touchscreen_gesture_action_recents">Recents</string>
+    <string name="touchscreen_gesture_action_up">Key up</string>
+    <string name="touchscreen_gesture_action_down">Key down</string>
+    <string name="touchscreen_gesture_action_left">Key left</string>
+    <string name="touchscreen_gesture_action_right">Key right</string>
+    <string name="touchscreen_gesture_action_assistant">Launch Google assistant</string>
+    <string name="touchscreen_gesture_action_screen_off">Turn screen off</string>
     <string name="touchscreen_gesture_action_do_nothing">Do nothing</string>
     <string name="touchscreen_gesture_action_flashlight">Toggle flashlight</string>
     <string name="touchscreen_gesture_action_camera">Open the camera</string>

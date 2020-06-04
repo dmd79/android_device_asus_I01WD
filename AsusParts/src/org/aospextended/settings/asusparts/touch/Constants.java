@@ -35,19 +35,28 @@ public class Constants {
     static final String UPDATE_PREFS_ACTION = "org.aospextended.settings.asusparts.touch.UPDATE_SETTINGS";
 
     // Screen off Gesture actions
-    static final int ACTION_FLASHLIGHT = 1;
-    static final int ACTION_CAMERA = 2;
-    static final int ACTION_BROWSER = 3;
-    static final int ACTION_DIALER = 4;
-    static final int ACTION_EMAIL = 5;
-    static final int ACTION_MESSAGES = 6;
-    static final int ACTION_PLAY_PAUSE_MUSIC = 7;
-    static final int ACTION_PREVIOUS_TRACK = 8;
-    static final int ACTION_NEXT_TRACK = 9;
-    static final int ACTION_VOLUME_DOWN = 10;
-    static final int ACTION_VOLUME_UP = 11;
-    static final int ACTION_CAMERA_MOTOR = 12;
-    static final int ACTION_FM_RADIO = 13;
+    static final int ACTION_BACK = 1;
+    static final int ACTION_HOME = 2;
+    static final int ACTION_RECENTS = 3;
+    static final int ACTION_UP = 4;
+    static final int ACTION_DOWN = 5;
+    static final int ACTION_LEFT = 6;
+    static final int ACTION_RIGHT = 7;
+    static final int ACTION_ASSISTANT = 8;
+    static final int ACTION_SCREEN_OFF = 9;
+    static final int ACTION_FLASHLIGHT = 10;
+    static final int ACTION_CAMERA = 11;
+    static final int ACTION_BROWSER = 12;
+    static final int ACTION_DIALER = 13;
+    static final int ACTION_EMAIL = 14;
+    static final int ACTION_MESSAGES = 15;
+    static final int ACTION_PLAY_PAUSE_MUSIC = 16;
+    static final int ACTION_PREVIOUS_TRACK = 17;
+    static final int ACTION_NEXT_TRACK = 18;
+    static final int ACTION_VOLUME_DOWN = 19;
+    static final int ACTION_VOLUME_UP = 20;
+    static final int ACTION_CAMERA_MOTOR = 21;
+    static final int ACTION_FM_RADIO = 22;
 
     // Broadcast extra: keycode mapping (int[]: key = gesture ID, value = keycode)
     static final String UPDATE_EXTRA_KEYCODE_MAPPING = "keycode_mappings";
