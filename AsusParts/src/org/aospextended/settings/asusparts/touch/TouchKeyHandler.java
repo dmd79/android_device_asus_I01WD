@@ -49,6 +49,7 @@ import android.util.SparseIntArray;
 import android.view.KeyEvent;
 
 import com.android.internal.os.DeviceKeyHandler;
+import com.android.internal.util.aospextended.AEXUtils;
 
 import java.util.List;
 
@@ -196,6 +197,33 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         @Override
         public void handleMessage(final Message msg) {
             switch (msg.arg1) {
+                case Constants.ACTION_BACK:
+                    back();
+                    break;
+                case Constants.ACTION_HOME:
+                    home();
+                    break;
+                case Constants.ACTION_RECENTS:
+                    recents();
+                    break;
+                case Constants.ACTION_UP:
+                    up();
+                    break;
+                case Constants.ACTION_DOWN:
+                    down();
+                    break;
+                case Constants.ACTION_LEFT:
+                    left();
+                    break;
+                case Constants.ACTION_RIGHT:
+                    right();
+                    break;
+                case Constants.ACTION_ASSISTANT:
+                    assistant();
+                    break;
+                case Constants.ACTION_SCREEN_OFF:
+                    screenOff();
+                    break;
                 case Constants.ACTION_CAMERA:
                     launchCamera();
                     break;
@@ -237,6 +265,52 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                     break;
             }
         }
+    }
+
+    private void back() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_BACK);
+        doHapticFeedback();
+    }
+
+    private void home() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_HOME);
+        doHapticFeedback();
+    }
+
+    private void recents() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
+        doHapticFeedback();
+    }
+
+    private void up() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_DPAD_UP);
+        doHapticFeedback();
+    }
+
+    private void down() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_DPAD_DOWN);
+        doHapticFeedback();
+    }
+
+    private void left() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_DPAD_LEFT);
+        doHapticFeedback();
+    }
+
+    private void right() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_DPAD_RIGHT);
+        doHapticFeedback();
+    }
+
+    private void assistant() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_ASSIST);
+        doHapticFeedback();
+    }
+
+    private void screenOff() {
+        PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+        pm.goToSleep(SystemClock.uptimeMillis());
+        doHapticFeedback();
     }
 
     private void launchCamera() {

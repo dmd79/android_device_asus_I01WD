@@ -170,6 +170,24 @@ public class TouchscreenGestureSettings extends PreferenceActivity
 
             private int getIconDrawableResourceForAction(final int action) {
                 switch (action) {
+                    case Constants.ACTION_BACK:
+                        return R.drawable.ic_gesture_action_back;
+                    case Constants.ACTION_HOME:
+                        return R.drawable.ic_gesture_action_home;
+                    case Constants.ACTION_RECENTS:
+                        return R.drawable.ic_gesture_action_recents;
+                    case Constants.ACTION_UP:
+                        return R.drawable.ic_gesture_action_up;
+                    case Constants.ACTION_DOWN:
+                        return R.drawable.ic_gesture_action_down;
+                    case Constants.ACTION_LEFT:
+                        return R.drawable.ic_gesture_action_left;
+                    case Constants.ACTION_RIGHT:
+                        return R.drawable.ic_gesture_action_right;
+                    case Constants.ACTION_ASSISTANT:
+                        return R.drawable.ic_gesture_action_assistant;
+                    case Constants.ACTION_SCREEN_OFF:
+                        return R.drawable.ic_gesture_action_screen_off;
                     case Constants.ACTION_CAMERA:
                         return R.drawable.ic_gesture_action_camera;
                     case Constants.ACTION_FLASHLIGHT:
