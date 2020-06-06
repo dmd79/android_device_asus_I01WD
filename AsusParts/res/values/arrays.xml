@@ -18,6 +18,28 @@
 -->
 <resources>
     <!-- Screen off Gestures -->
+    <string-array name="smartkey_gesture_action_entries">
+        <item>@string/touchscreen_gesture_action_do_nothing</item>
+        <item>@string/touchscreen_gesture_action_assistant</item>
+        <item>@string/touchscreen_gesture_action_screen_off</item>
+        <item>@string/touchscreen_gesture_action_flashlight</item>
+        <item>@string/touchscreen_gesture_action_camera</item>
+        <item>@string/touchscreen_gesture_action_play_pause_music</item>
+        <item>@string/touchscreen_gesture_action_camera_motor</item>
+        <item>@string/touchscreen_gesture_action_fm_radio</item>
+    </string-array>
+
+    <string-array name="smartkey_gesture_action_values">
+        <item>0</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>16</item>
+        <item>21</item>
+        <item>22</item>
+    </string-array>
+
     <string-array name="touchscreen_gesture_action_entries">
         <item>@string/touchscreen_gesture_action_do_nothing</item>
         <item>@string/touchscreen_gesture_action_back</item>

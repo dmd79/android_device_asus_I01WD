@@ -43,7 +43,7 @@ import org.aospextended.settings.asusparts.R;
 
 import java.lang.System;
 
-public class TouchscreenGestureSettings extends PreferenceActivity
+public class SmartkeyGestureSettings extends PreferenceActivity
         implements PreferenceFragment.OnPreferenceStartFragmentCallback {
 
     @Override
@@ -76,7 +76,7 @@ public class TouchscreenGestureSettings extends PreferenceActivity
 
         private static final String KEY_TOUCHSCREEN_GESTURE = "touchscreen_gesture";
         private static final String TOUCHSCREEN_GESTURE_TITLE = KEY_TOUCHSCREEN_GESTURE + "_%s_title";
-        private static final String KEY_HAPTIC_FEEDBACK = "fp_gesture_haptic_feedback";
+        private static final String KEY_HAPTIC_FEEDBACK = "smartkey_gesture_haptic_feedback";
 
         private SwitchPreference mHapticFeedback;
 
@@ -86,14 +86,14 @@ public class TouchscreenGestureSettings extends PreferenceActivity
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
-            setPreferencesFromResource(R.xml.touchscreen_gesture_settings, rootKey);
+            setPreferencesFromResource(R.xml.smartkey_gesture_settings, rootKey);
 
             actionBar = getActivity().getActionBar();
             assert actionBar != null;
             actionBar.setDisplayHomeAsUpEnabled(true);
 
             if (isTouchscreenGesturesSupported(getContext())) {
-                initTouchscreenGestures();
+                initSmartkeyGestures();
             }
 
             mHapticFeedback = (SwitchPreference) findPreference(KEY_HAPTIC_FEEDBACK);
@@ -114,23 +114,23 @@ public class TouchscreenGestureSettings extends PreferenceActivity
             }
         };
 
-        private void initTouchscreenGestures() {
+        private void initSmartkeyGestures() {
             final LineageHardwareManager manager = LineageHardwareManager.getInstance(getContext());
             mTouchscreenGestures = manager.getTouchscreenGestures();
             final int[] actions = getDefaultGestureActions(getContext(), mTouchscreenGestures);
             for (final TouchscreenGesture gesture : mTouchscreenGestures) {
-                if (gesture.id > 0) {
-                getPreferenceScreen().addPreference(new TouchscreenGesturePreference(
+                if (gesture.id < 1) {
+                getPreferenceScreen().addPreference(new SmartkeyGesturePreference(
                         getContext(), gesture, actions[gesture.id]));
                 }
             }
         }
 
-        private class TouchscreenGesturePreference extends ListPreference {
+        private class SmartkeyGesturePreference extends ListPreference {
             private final Context mContext;
             private final TouchscreenGesture mGesture;
 
-            public TouchscreenGesturePreference(final Context context,
+            public SmartkeyGesturePreference(final Context context,
                                                 final TouchscreenGesture gesture,
                                                 final int defaultAction) {
                 super(context);
@@ -138,8 +138,8 @@ public class TouchscreenGestureSettings extends PreferenceActivity
                 mGesture = gesture;
 
                 setKey(buildPreferenceKey(gesture));
-                setEntries(R.array.touchscreen_gesture_action_entries);
-                setEntryValues(R.array.touchscreen_gesture_action_values);
+                setEntries(R.array.smartkey_gesture_action_entries);
+                setEntryValues(R.array.smartkey_gesture_action_values);
                 setDefaultValue(String.valueOf(defaultAction));
                 setIcon(getIconDrawableResourceForAction(defaultAction));
 
@@ -223,7 +223,7 @@ public class TouchscreenGestureSettings extends PreferenceActivity
             }
         }
 
-        public static void restoreTouchscreenGestureStates(final Context context) {
+        public static void restoreSmartkeyGestureStates(final Context context) {
             if (!isTouchscreenGesturesSupported(context)) {
                 return;
             }
