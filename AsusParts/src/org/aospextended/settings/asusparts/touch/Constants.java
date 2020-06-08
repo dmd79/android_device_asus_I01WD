@@ -35,28 +35,28 @@ public class Constants {
     static final String UPDATE_PREFS_ACTION = "org.aospextended.settings.asusparts.touch.UPDATE_SETTINGS";
 
     // Screen off Gesture actions
-    static final int ACTION_BACK = 1;
-    static final int ACTION_HOME = 2;
-    static final int ACTION_RECENTS = 3;
-    static final int ACTION_UP = 4;
-    static final int ACTION_DOWN = 5;
-    static final int ACTION_LEFT = 6;
-    static final int ACTION_RIGHT = 7;
-    static final int ACTION_ASSISTANT = 8;
-    static final int ACTION_SCREEN_OFF = 9;
-    static final int ACTION_FLASHLIGHT = 10;
-    static final int ACTION_CAMERA = 11;
-    static final int ACTION_BROWSER = 12;
-    static final int ACTION_DIALER = 13;
-    static final int ACTION_EMAIL = 14;
-    static final int ACTION_MESSAGES = 15;
-    static final int ACTION_PLAY_PAUSE_MUSIC = 16;
-    static final int ACTION_PREVIOUS_TRACK = 17;
-    static final int ACTION_NEXT_TRACK = 18;
-    static final int ACTION_VOLUME_DOWN = 19;
-    static final int ACTION_VOLUME_UP = 20;
-    static final int ACTION_CAMERA_MOTOR = 21;
-    static final int ACTION_FM_RADIO = 22;
+    static final int ACTION_BACK = 2;
+    static final int ACTION_HOME = 3;
+    static final int ACTION_RECENTS = 4;
+    static final int ACTION_UP = 5;
+    static final int ACTION_DOWN = 6;
+    static final int ACTION_LEFT = 7;
+    static final int ACTION_RIGHT = 8;
+    static final int ACTION_ASSISTANT = 9;
+    static final int ACTION_SCREEN_OFF = 10;
+    static final int ACTION_FLASHLIGHT = 11;
+    static final int ACTION_CAMERA = 12;
+    static final int ACTION_BROWSER = 13;
+    static final int ACTION_DIALER = 14;
+    static final int ACTION_EMAIL = 15;
+    static final int ACTION_MESSAGES = 16;
+    static final int ACTION_PLAY_PAUSE_MUSIC = 17;
+    static final int ACTION_PREVIOUS_TRACK = 18;
+    static final int ACTION_NEXT_TRACK = 19;
+    static final int ACTION_VOLUME_DOWN = 20;
+    static final int ACTION_VOLUME_UP = 21;
+    static final int ACTION_CAMERA_MOTOR = 22;
+    static final int ACTION_FM_RADIO = 23;
 
     // Broadcast extra: keycode mapping (int[]: key = gesture ID, value = keycode)
     static final String UPDATE_EXTRA_KEYCODE_MAPPING = "keycode_mappings";

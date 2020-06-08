@@ -26,6 +26,7 @@ import androidx.preference.PreferenceManager;
 
 import org.aospextended.settings.asusparts.doze.DozeUtils;
 import org.aospextended.settings.asusparts.touch.SmartkeyGestureSettings;
+import org.aospextended.settings.asusparts.touch.FpGestureSettings;
 import org.aospextended.settings.asusparts.touch.TouchscreenGestureSettings;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -40,6 +41,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         DozeUtils.checkDozeService(context);
         SmartkeyGestureSettings.MainSettingsFragment.restoreSmartkeyGestureStates(context);
+        FpGestureSettings.MainSettingsFragment.restoreFpGestureStates(context);
         TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
     }
 

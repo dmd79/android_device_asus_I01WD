@@ -43,7 +43,7 @@ import org.aospextended.settings.asusparts.R;
 
 import java.lang.System;
 
-public class TouchscreenGestureSettings extends PreferenceActivity
+public class FpGestureSettings extends PreferenceActivity
         implements PreferenceFragment.OnPreferenceStartFragmentCallback {
 
     @Override
@@ -76,7 +76,7 @@ public class TouchscreenGestureSettings extends PreferenceActivity
 
         private static final String KEY_TOUCHSCREEN_GESTURE = "touchscreen_gesture";
         private static final String TOUCHSCREEN_GESTURE_TITLE = KEY_TOUCHSCREEN_GESTURE + "_%s_title";
-        private static final String KEY_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
+        private static final String KEY_HAPTIC_FEEDBACK = "fp_gesture_haptic_feedback";
 
         private SwitchPreference mHapticFeedback;
 
@@ -86,14 +86,14 @@ public class TouchscreenGestureSettings extends PreferenceActivity
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
-            setPreferencesFromResource(R.xml.touchscreen_gesture_settings, rootKey);
+            setPreferencesFromResource(R.xml.fp_gesture_settings, rootKey);
 
             actionBar = getActivity().getActionBar();
             assert actionBar != null;
             actionBar.setDisplayHomeAsUpEnabled(true);
 
             if (isTouchscreenGesturesSupported(getContext())) {
-                initTouchscreenGestures();
+                initFpGestures();
             }
 
             mHapticFeedback = (SwitchPreference) findPreference(KEY_HAPTIC_FEEDBACK);
@@ -114,23 +114,23 @@ public class TouchscreenGestureSettings extends PreferenceActivity
             }
         };
 
-        private void initTouchscreenGestures() {
+        private void initFpGestures() {
             final LineageHardwareManager manager = LineageHardwareManager.getInstance(getContext());
             mTouchscreenGestures = manager.getTouchscreenGestures();
             final int[] actions = getDefaultGestureActions(getContext(), mTouchscreenGestures);
             for (final TouchscreenGesture gesture : mTouchscreenGestures) {
-                if (gesture.id > 5) {
-                getPreferenceScreen().addPreference(new TouchscreenGesturePreference(
+                if ((gesture.id > 0) && (gesture.id < 6)) {
+                getPreferenceScreen().addPreference(new FpGesturePreference(
                         getContext(), gesture, actions[gesture.id]));
                 }
             }
         }
 
-        private class TouchscreenGesturePreference extends ListPreference {
+        private class FpGesturePreference extends ListPreference {
             private final Context mContext;
             private final TouchscreenGesture mGesture;
 
-            public TouchscreenGesturePreference(final Context context,
+            public FpGesturePreference(final Context context,
                                                 final TouchscreenGesture gesture,
                                                 final int defaultAction) {
                 super(context);
@@ -138,13 +138,13 @@ public class TouchscreenGestureSettings extends PreferenceActivity
                 mGesture = gesture;
 
                 setKey(buildPreferenceKey(gesture));
-                setEntries(R.array.touchscreen_gesture_action_entries);
-                setEntryValues(R.array.touchscreen_gesture_action_values);
+                setEntries(R.array.fp_gesture_action_entries);
+                setEntryValues(R.array.fp_gesture_action_values);
                 setDefaultValue(String.valueOf(defaultAction));
                 setIcon(getIconDrawableResourceForAction(defaultAction));
 
                 setSummary("%s");
-                setDialogTitle(R.string.touchscreen_gesture_action_dialog_title);
+                setDialogTitle(R.string.fp_gesture_action_dialog_title);
                 setTitle(Utils.getLocalizedString(
                         context.getResources(), gesture.name, TOUCHSCREEN_GESTURE_TITLE));
             }
@@ -223,7 +223,7 @@ public class TouchscreenGestureSettings extends PreferenceActivity
             }
         }
 
-        public static void restoreTouchscreenGestureStates(final Context context) {
+        public static void restoreFpGestureStates(final Context context) {
             if (!isTouchscreenGesturesSupported(context)) {
                 return;
             }

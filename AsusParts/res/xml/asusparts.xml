@@ -48,6 +48,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/fp_gesture_category">
+
+        <Preference
+            android:key="fp_gesture_category"
+            android:title="@string/fp_gesture_settings_title"
+            android:summary="@string/fp_gesture_settings_summary"
+            android:icon="@drawable/ic_fingerprint"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.aospextended.settings.asusparts"
+                    android:targetClass="org.aospextended.settings.asusparts.touch.FpGestureSettings" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/touchscreen_gesture_category">
 
         <Preference
