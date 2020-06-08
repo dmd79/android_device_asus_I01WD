@@ -94,14 +94,20 @@
         </activity>
 
         <activity
-            android:name=".touch.TouchscreenGestureSettings"
-            android:label="@string/touchscreen_gesture_settings_title"
+            android:name=".touch.SmartkeyGestureSettings"
+            android:label="@string/smartkey_gesture_settings_title"
             android:theme="@style/Theme.Main">
         </activity>
 
         <activity
-            android:name=".touch.SmartkeyGestureSettings"
-            android:label="@string/smartkey_gesture_settings_title"
+            android:name=".touch.FpGestureSettings"
+            android:label="@string/fp_gesture_settings_title"
+            android:theme="@style/Theme.Main">
+        </activity>
+
+        <activity
+            android:name=".touch.TouchscreenGestureSettings"
+            android:label="@string/touchscreen_gesture_settings_title"
             android:theme="@style/Theme.Main">
         </activity>
 

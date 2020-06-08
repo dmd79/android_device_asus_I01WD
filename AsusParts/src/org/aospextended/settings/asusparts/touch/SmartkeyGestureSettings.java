@@ -144,7 +144,7 @@ public class SmartkeyGestureSettings extends PreferenceActivity
                 setIcon(getIconDrawableResourceForAction(defaultAction));
 
                 setSummary("%s");
-                setDialogTitle(R.string.touchscreen_gesture_action_dialog_title);
+                setDialogTitle(R.string.smartkey_gesture_action_dialog_title);
                 setTitle(Utils.getLocalizedString(
                         context.getResources(), gesture.name, TOUCHSCREEN_GESTURE_TITLE));
             }

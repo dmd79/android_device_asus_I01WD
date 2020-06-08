@@ -63,6 +63,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
     private static final int EVENT_PROCESS_WAKELOCK_DURATION = 500;
     private static final String KEY_SMARTKEY_HAPTIC_FEEDBACK = "smartkey_gesture_haptic_feedback";
     private static final String KEY_FP_HAPTIC_FEEDBACK = "fp_gesture_haptic_feedback";
+    private static final String KEY_TOUCHSCREEN_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";    
 
     private final Context mContext;
     private final AudioManager mAudioManager;
@@ -144,9 +145,12 @@ public class TouchKeyHandler implements DeviceKeyHandler {
             if(String.valueOf(event).contains("scanCode=34")) {
                 KeyCode = "SmartKey";
             }
-            if((String.valueOf(event).contains("scanCode=45")) || (String.valueOf(event).contains("scanCode=30")) || (String.valueOf(event).contains("scanCode=48")) || (String.valueOf(event).contains("scanCode=32")) || (String.valueOf(event).contains("scanCode=18"))) {
+            if((String.valueOf(event).contains("scanCode=45")) || (String.valueOf(event).contains("scanCode=30")) || (String.valueOf(event).contains("scanCode=48")) || (String.valueOf(event).contains("scanCode=32")) || (String.valueOf(event).contains("scanCode=19"))) {
                 KeyCode = "Fp";
             }
+            if((String.valueOf(event).contains("scanCode=46")) || (String.valueOf(event).contains("scanCode=47")) || (String.valueOf(event).contains("scanCode=44"))) {
+                KeyCode = "TouchScreen";
+            }            
             Log.d(TAG, KeyCode);
             return event;
         }
@@ -285,6 +289,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void home() {
@@ -294,6 +301,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -305,6 +315,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void up() {
@@ -314,6 +327,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -325,6 +341,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void left() {
@@ -334,6 +353,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -345,6 +367,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void assistant() {
@@ -354,6 +379,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -365,6 +393,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -378,6 +409,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -393,6 +427,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchDialer() {
@@ -405,6 +442,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -420,6 +460,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void launchMessages() {
@@ -433,6 +476,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -452,6 +498,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
         }
     }
 
@@ -463,6 +512,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void previousTrack() {
@@ -473,6 +525,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void nextTrack() {
@@ -482,6 +537,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -494,6 +552,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void volumeUp() {
@@ -504,6 +565,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -519,6 +583,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
         }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
     }
 
     private void fmRadio() {
@@ -531,6 +598,9 @@ public class TouchKeyHandler implements DeviceKeyHandler {
         }
         if (KeyCode == "Fp") {
             doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
         }
     }
 
@@ -582,6 +652,18 @@ public class TouchKeyHandler implements DeviceKeyHandler {
 
         final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
                 KEY_FP_HAPTIC_FEEDBACK, 1) != 0;
+        if (enabled) {
+            mVibrator.vibrate(50);
+        }
+    }
+
+    private void doTouchScreenHapticFeedback() {
+        if (mVibrator == null) {
+            return;
+        }
+
+        final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
+                KEY_TOUCHSCREEN_HAPTIC_FEEDBACK, 1) != 0;
         if (enabled) {
             mVibrator.vibrate(50);
         }
