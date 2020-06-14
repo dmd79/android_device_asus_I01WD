@@ -133,6 +133,8 @@
     <string name="touchscreen_gesture_action_left">Key left</string>
     <string name="touchscreen_gesture_action_right">Key right</string>
     <string name="touchscreen_gesture_action_assistant">Launch Google assistant</string>
+    <string name="touchscreen_gesture_action_wake_up">Wake up screen</string>
+    <string name="touchscreen_gesture_action_screenshot">Take screenshot</string>
     <string name="touchscreen_gesture_action_screen_off">Turn screen off</string>
     <string name="touchscreen_gesture_action_do_nothing">Do nothing</string>
     <string name="touchscreen_gesture_action_flashlight">Toggle flashlight</string>

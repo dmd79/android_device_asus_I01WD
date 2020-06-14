@@ -188,6 +188,10 @@ public class FpGestureSettings extends PreferenceActivity
                         return R.drawable.ic_gesture_action_right;
                     case Constants.ACTION_ASSISTANT:
                         return R.drawable.ic_gesture_action_assistant;
+                    case Constants.ACTION_WAKE_UP:
+                        return R.drawable.ic_gesture_action_wake_up;
+                    case Constants.ACTION_SCREENSHOT:
+                        return R.drawable.ic_gesture_action_screenshot;
                     case Constants.ACTION_SCREEN_OFF:
                         return R.drawable.ic_gesture_action_screen_off;
                     case Constants.ACTION_CAMERA:
