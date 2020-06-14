@@ -235,6 +235,12 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                 case Constants.ACTION_ASSISTANT:
                     assistant();
                     break;
+                case Constants.ACTION_WAKE_UP:
+                    wakeup();
+                    break;
+                case Constants.ACTION_SCREENSHOT:
+                    screenshot();
+                    break;
                 case Constants.ACTION_SCREEN_OFF:
                     screenOff();
                     break;
@@ -374,6 +380,32 @@ public class TouchKeyHandler implements DeviceKeyHandler {
 
     private void assistant() {
         AEXUtils.sendKeycode(KeyEvent.KEYCODE_ASSIST);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void wakeup() {
+        AEXUtils.sendKeycode(KeyEvent.KEYCODE_WAKEUP);
+        if (KeyCode == "SmartKey") {
+            doSmartkeyHapticFeedback();
+        }
+        if (KeyCode == "Fp") {
+            doFpHapticFeedback();
+        }
+        if (KeyCode == "TouchScreen") {
+            doTouchScreenHapticFeedback();
+        }
+    }
+
+    private void screenshot() {
+        AEXUtils.takeScreenshot(true);
         if (KeyCode == "SmartKey") {
             doSmartkeyHapticFeedback();
         }

@@ -43,20 +43,22 @@ public class Constants {
     static final int ACTION_LEFT = 7;
     static final int ACTION_RIGHT = 8;
     static final int ACTION_ASSISTANT = 9;
-    static final int ACTION_SCREEN_OFF = 10;
-    static final int ACTION_FLASHLIGHT = 11;
-    static final int ACTION_CAMERA = 12;
-    static final int ACTION_BROWSER = 13;
-    static final int ACTION_DIALER = 14;
-    static final int ACTION_EMAIL = 15;
-    static final int ACTION_MESSAGES = 16;
-    static final int ACTION_PLAY_PAUSE_MUSIC = 17;
-    static final int ACTION_PREVIOUS_TRACK = 18;
-    static final int ACTION_NEXT_TRACK = 19;
-    static final int ACTION_VOLUME_DOWN = 20;
-    static final int ACTION_VOLUME_UP = 21;
-    static final int ACTION_CAMERA_MOTOR = 22;
-    static final int ACTION_FM_RADIO = 23;
+    static final int ACTION_WAKE_UP = 10;
+    static final int ACTION_SCREENSHOT = 11;
+    static final int ACTION_SCREEN_OFF = 12;
+    static final int ACTION_FLASHLIGHT = 13;
+    static final int ACTION_CAMERA = 14;
+    static final int ACTION_BROWSER = 15;
+    static final int ACTION_DIALER = 16;
+    static final int ACTION_EMAIL = 17;
+    static final int ACTION_MESSAGES = 18;
+    static final int ACTION_PLAY_PAUSE_MUSIC = 19;
+    static final int ACTION_PREVIOUS_TRACK = 20;
+    static final int ACTION_NEXT_TRACK = 21;
+    static final int ACTION_VOLUME_DOWN = 22;
+    static final int ACTION_VOLUME_UP = 23;
+    static final int ACTION_CAMERA_MOTOR = 24;
+    static final int ACTION_FM_RADIO = 25;
 
     // Broadcast extra: keycode mapping (int[]: key = gesture ID, value = keycode)
     static final String UPDATE_EXTRA_KEYCODE_MAPPING = "keycode_mappings";

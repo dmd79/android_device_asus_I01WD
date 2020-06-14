@@ -21,6 +21,8 @@
     <string-array name="smartkey_gesture_action_entries">
         <item>@string/touchscreen_gesture_action_do_nothing</item>
         <item>@string/touchscreen_gesture_action_assistant</item>
+        <item>@string/touchscreen_gesture_action_wake_up</item>
+        <item>@string/touchscreen_gesture_action_screenshot</item>
         <item>@string/touchscreen_gesture_action_screen_off</item>
         <item>@string/touchscreen_gesture_action_flashlight</item>
         <item>@string/touchscreen_gesture_action_camera</item>
@@ -35,9 +37,11 @@
         <item>10</item>
         <item>11</item>
         <item>12</item>
-        <item>17</item>
-        <item>22</item>
-        <item>23</item>
+        <item>13</item>
+        <item>14</item>
+        <item>19</item>
+        <item>24</item>
+        <item>25</item>
     </string-array>
 
     <string-array name="fp_gesture_action_entries">
@@ -50,6 +54,7 @@
         <item>@string/touchscreen_gesture_action_left</item>
         <item>@string/touchscreen_gesture_action_right</item>
         <item>@string/touchscreen_gesture_action_assistant</item>
+        <item>@string/touchscreen_gesture_action_screenshot</item>
         <item>@string/touchscreen_gesture_action_screen_off</item>
         <item>@string/touchscreen_gesture_action_flashlight</item>
         <item>@string/touchscreen_gesture_action_camera</item>
@@ -76,7 +81,6 @@
         <item>7</item>
         <item>8</item>
         <item>9</item>
-        <item>10</item>
         <item>11</item>
         <item>12</item>
         <item>13</item>
@@ -90,11 +94,14 @@
         <item>21</item>
         <item>22</item>
         <item>23</item>
+        <item>24</item>
+        <item>25</item>
     </string-array>
 
     <string-array name="touchscreen_gesture_action_entries">
         <item>@string/touchscreen_gesture_action_do_nothing</item>
         <item>@string/touchscreen_gesture_action_assistant</item>
+        <item>@string/touchscreen_gesture_action_wake_up</item>
         <item>@string/touchscreen_gesture_action_flashlight</item>
         <item>@string/touchscreen_gesture_action_camera</item>
         <item>@string/touchscreen_gesture_action_browser</item>
@@ -113,8 +120,7 @@
     <string-array name="touchscreen_gesture_action_values">
         <item>1</item>
         <item>9</item>
-        <item>11</item>
-        <item>12</item>
+        <item>10</item>
         <item>13</item>
         <item>14</item>
         <item>15</item>
@@ -126,5 +132,7 @@
         <item>21</item>
         <item>22</item>
         <item>23</item>
+        <item>24</item>
+        <item>25</item>
     </string-array>
 </resources>
