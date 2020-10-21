@@ -22,6 +22,8 @@ DEVICE_PATH := device/asus/I01WD
 
 BOARD_VENDOR := asus
 
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
