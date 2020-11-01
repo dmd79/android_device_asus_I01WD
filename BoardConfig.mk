@@ -70,7 +70,6 @@ QCOM_BT_USE_BTNV := true
 TARGET_USE_QTI_BT_STACK := true
 
 # charger
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BUILD_BROKEN_DUP_RULES := true
 
 # Dex
