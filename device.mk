@@ -66,6 +66,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    BluetoothQti
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl.recovery \
