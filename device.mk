@@ -255,6 +255,10 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
+# Health
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/system/product/vendor_overlay/29/bin/hw/android.hardware.health@2.0-service:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/bin/hw/android.hardware.health@2.0-service
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
