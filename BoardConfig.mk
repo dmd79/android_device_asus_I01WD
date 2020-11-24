@@ -163,10 +163,12 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
     device/qcom/sepolicy/generic/public \
     device/qcom/sepolicy/qva/public
 
-#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private \
-    device/aosp/sepolicy/qcom/system
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+    device/aosp/sepolicy/qcom/system \
+    device/aosp/sepolicy/qcom/dynamic
+
+BOARD_SEPOLICY_M4DEFS += \
+    qdisplay_service=vendor_qdisplay_service
 
 # Treble
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
