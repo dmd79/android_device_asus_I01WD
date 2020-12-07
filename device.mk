@@ -280,10 +280,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.asus_msmnile
-
 # NFC - NQ (NXP)
 PRODUCT_PACKAGES += \
     NfcNci \
