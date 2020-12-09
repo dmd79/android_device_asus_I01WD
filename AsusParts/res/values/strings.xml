@@ -80,6 +80,16 @@
     <!-- Device specific settings -->
     <string name="device_settings_app_name">Advanced settings</string>
 
+    <!-- Glovemode -->
+    <string name="glove_control">Glove mode control</string>
+    <string name="glove_title">Enable glove mode</string>
+    <string name="glove_summary">High touch sensitivity</string>
+
+    <!-- Swipe up -->
+    <string name="swipeup_control">Swipe up control</string>
+    <string name="swipeup_title">Enable swipe up gesture</string>
+    <string name="swipeup_summary">Swipe up to wake up screen</string>
+
     <!-- Smart key -->
     <string name="smartkey_gesture_action_dialog_title">Smart key action</string>
     <string name="smartkey_gesture_category">Smart key</string>
