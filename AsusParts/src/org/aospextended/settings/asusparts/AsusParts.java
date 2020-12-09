@@ -27,11 +27,21 @@ import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 import androidx.preference.TwoStatePreference;
+import android.provider.Settings;
 
 import org.aospextended.settings.asusparts.doze.DozeSettingsActivity;
 
 public class AsusParts extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    public static final String KEY_GLOVE_SWITCH = "glove";
+    public static final String GLOVE_PATH = "/proc/driver/glove";
+
+    public static final String KEY_SWIPEUP_SWITCH = "swipeup";
+    public static final String SWIPEUP_PATH = "/proc/driver/swipeup";
+
+    private TwoStatePreference mGloveSwitch;
+    private TwoStatePreference mSwipeUpSwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -45,6 +55,30 @@ public class AsusParts extends PreferenceFragment implements
                 return true;
             }
         });
+
+        mGloveSwitch = (TwoStatePreference) findPreference(KEY_GLOVE_SWITCH);
+        mGloveSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+        KEY_GLOVE_SWITCH, 1) != 0);
+
+        mSwipeUpSwitch = (TwoStatePreference) findPreference(KEY_SWIPEUP_SWITCH);
+        mSwipeUpSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+        KEY_SWIPEUP_SWITCH, 1) != 0);
+
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mGloveSwitch) {
+            Settings.System.putInt(getContext().getContentResolver(), KEY_GLOVE_SWITCH, mGloveSwitch.isChecked() ? 1 : 0);
+            FileUtils.setValue(GLOVE_PATH, mGloveSwitch.isChecked() ? "1" : "0");
+            return true;
+        }
+        if (preference == mSwipeUpSwitch) {
+            Settings.System.putInt(getContext().getContentResolver(), KEY_SWIPEUP_SWITCH, mSwipeUpSwitch.isChecked() ? 1 : 0);
+            FileUtils.setValue(SWIPEUP_PATH, mSwipeUpSwitch.isChecked() ? "1" : "0");
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
     }
 
     @Override

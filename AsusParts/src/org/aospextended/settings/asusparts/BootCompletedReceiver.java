@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
@@ -43,6 +44,12 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         SmartkeyGestureSettings.MainSettingsFragment.restoreSmartkeyGestureStates(context);
         FpGestureSettings.MainSettingsFragment.restoreFpGestureStates(context);
         TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
+        FileUtils.setValue(AsusParts.GLOVE_PATH, Settings.System.getInt(context.getContentResolver(),
+                AsusParts.KEY_GLOVE_SWITCH, 1));
+        if (DEBUG) Log.d(TAG, "Glove switch = "+(Settings.System.getInt(context.getContentResolver(), AsusParts.KEY_GLOVE_SWITCH, 1))); 
+        FileUtils.setValue(AsusParts.SWIPEUP_PATH, Settings.System.getInt(context.getContentResolver(),
+                AsusParts.KEY_SWIPEUP_SWITCH, 1));
+        if (DEBUG) Log.d(TAG, "Swipe up switch = "+(Settings.System.getInt(context.getContentResolver(), AsusParts.KEY_SWIPEUP_SWITCH, 1)));        
     }
 
     private boolean hasRestoredTunable(Context context) {

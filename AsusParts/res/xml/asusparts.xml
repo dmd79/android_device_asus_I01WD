@@ -78,5 +78,26 @@
         </Preference>
 
     </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/glove_control">
+
+        <SwitchPreference
+            android:key="glove"
+            android:defaultValue="0"
+            android:icon="@drawable/ic_glove"
+            android:title="@string/glove_title"
+            android:summary="@string/glove_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/swipeup_control">
+
+        <SwitchPreference
+            android:key="swipeup"
+            android:defaultValue="0"
+            android:icon="@drawable/ic_swipe_up"
+            android:title="@string/swipeup_title"
+            android:summary="@string/swipeup_summary" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
