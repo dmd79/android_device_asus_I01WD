@@ -5,4 +5,3 @@ type hal_lineage_touch_asus_msmnile_exec, system_file_type, exec_type, file_type
 init_daemon_domain(hal_lineage_touch_asus_msmnile)
 
 allow hal_lineage_touch_asus_msmnile proc_touchscreen:file rw_file_perms;
-allow hal_lineage_touch_asus_msmnile default_android_hwservice:hwservice_manager { add find };
