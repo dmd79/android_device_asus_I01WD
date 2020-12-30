@@ -28,6 +28,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
  DEVICE_PACKAGE_OVERLAYS += \
      $(LOCAL_PATH)/overlay
 
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 30
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -62,9 +65,9 @@ PRODUCT_COPY_FILES += \
     
 # audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes_ZS630KL.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/etc/audio_policy_volumes_ZS630KL.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes_ZS630KL.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes_ZS630KL.xml
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -337,9 +340,6 @@ PRODUCT_HOST_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
 
 # WiFi Display
 PRODUCT_PACKAGES += \
