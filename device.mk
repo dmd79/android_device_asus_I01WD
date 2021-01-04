@@ -279,7 +279,7 @@ PRODUCT_PACKAGES += \
 # Prebuilt
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/asus/I01WD/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/asus/I01WD/prebuilt/root,root)
+    $(call find-copy-subdir-files,*,device/asus/I01WD/prebuilt/recovery,recovery/root)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
