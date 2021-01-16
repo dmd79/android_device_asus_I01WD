@@ -256,7 +256,7 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/system/product/vendor_overlay/29/bin/hw/android.hardware.health@2.0-service:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/29/bin/hw/android.hardware.health@2.0-service
+    $(LOCAL_PATH)/prebuilt/system/product/vendor_overlay/30/bin/hw/android.hardware.health@2.1-service:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/bin/hw/android.hardware.health@2.1-service
 
 # Input
 PRODUCT_COPY_FILES += \
