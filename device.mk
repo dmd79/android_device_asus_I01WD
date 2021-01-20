@@ -86,6 +86,10 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     CameraTile
 
+# Crypto
+PRODUCT_PACKAGES += \
+    libcryptfs_hw
+
 # Charger bin
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/charger/bin/charger:system/bin/charger
