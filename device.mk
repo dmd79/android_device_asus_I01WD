@@ -233,7 +233,8 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     libion \
-    libtinyxml2
+    libtinyxml2 \
+    vendor.display.config@1.0
 
 PRODUCT_PACKAGES += \
     libtinyalsa
