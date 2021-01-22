@@ -80,6 +80,11 @@
     <!-- Device specific settings -->
     <string name="device_settings_app_name">Advanced settings</string>
 
+    <!-- QHDR -->
+    <string name="qhdr_control">QHDR mode control</string>
+    <string name="qhdr_title">Enable QHDR mode</string>
+    <string name="qhdr_summary">Close and open camera to enable or disable QHDR mode</string>
+
     <!-- Glovemode -->
     <string name="glove_control">Glove mode control</string>
     <string name="glove_title">Enable glove mode</string>

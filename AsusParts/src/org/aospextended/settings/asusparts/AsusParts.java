@@ -19,6 +19,7 @@ package org.aospextended.settings.asusparts;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.Preference;
 import androidx.preference.ListPreference;
@@ -34,12 +35,16 @@ import org.aospextended.settings.asusparts.doze.DozeSettingsActivity;
 public class AsusParts extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    public static final String KEY_QHDR_SWITCH = "qhdr";
+    public static final String QHDR_SYSTEM_PROPERTY = "persist.vendor.camera.StreamModeIndex";
+
     public static final String KEY_GLOVE_SWITCH = "glove";
     public static final String GLOVE_PATH = "/proc/driver/glove";
 
     public static final String KEY_SWIPEUP_SWITCH = "swipeup";
     public static final String SWIPEUP_PATH = "/proc/driver/swipeup";
 
+    private TwoStatePreference mQhdrSwitch;
     private TwoStatePreference mGloveSwitch;
     private TwoStatePreference mSwipeUpSwitch;
 
@@ -56,6 +61,10 @@ public class AsusParts extends PreferenceFragment implements
             }
         });
 
+        mQhdrSwitch = (TwoStatePreference) findPreference(KEY_QHDR_SWITCH);
+        mQhdrSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+        KEY_QHDR_SWITCH, 1) != 0);
+
         mGloveSwitch = (TwoStatePreference) findPreference(KEY_GLOVE_SWITCH);
         mGloveSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
         KEY_GLOVE_SWITCH, 1) != 0);
@@ -68,6 +77,11 @@ public class AsusParts extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mQhdrSwitch) {
+            Settings.System.putInt(getContext().getContentResolver(), KEY_QHDR_SWITCH, mQhdrSwitch.isChecked() ? 1 : 0);
+            SystemProperties.set(QHDR_SYSTEM_PROPERTY, mQhdrSwitch.isChecked() ? "9" : "");
+            return true;
+        }
         if (preference == mGloveSwitch) {
             Settings.System.putInt(getContext().getContentResolver(), KEY_GLOVE_SWITCH, mGloveSwitch.isChecked() ? 1 : 0);
             FileUtils.setValue(GLOVE_PATH, mGloveSwitch.isChecked() ? "1" : "0");
