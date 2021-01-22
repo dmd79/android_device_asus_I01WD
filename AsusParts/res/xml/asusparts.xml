@@ -78,6 +78,18 @@
         </Preference>
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/qhdr_control">
+
+        <SwitchPreference
+            android:key="qhdr"
+            android:defaultValue="0"
+            android:icon="@drawable/ic_qhdr"
+            android:title="@string/qhdr_title"
+            android:summary="@string/qhdr_summary" />
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:title="@string/glove_control">
 

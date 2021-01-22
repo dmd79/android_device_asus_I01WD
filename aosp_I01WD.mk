@@ -19,6 +19,8 @@
 # product configuration (apps).
 #
 
+SELINUX_IGNORE_NEVERALLOWS := true
+
 # GApps
 WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
