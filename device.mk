@@ -258,6 +258,10 @@ PRODUCT_BOOT_JARS += qcom.fmradio
 PRODUCT_PACKAGES += \
     FrameworksResOverlay
 
+# Health
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/health/lib64/hw/android.hardware.health@2.0-impl-2.1.so:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/lib64/hw/android.hardware.health@2.0-impl-2.1.so
+
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \

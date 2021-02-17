@@ -17,3 +17,6 @@
 # HALs
 /system/bin/hw/lineage\.touch@1\.0-service\.asus_msmnile	u:object_r:hal_lineage_touch_asus_msmnile_exec:s0
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.power@1\.2-service	u:object_r:hal_power_default_exec:s0
+
+# Health
+/(product|system/product)/vendor_overlay/[0-9]+/lib64/hw/android\.hardware\.health@2\.0-impl-2\.1\.so	u:object_r:vendor_file:s0
