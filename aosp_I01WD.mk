@@ -19,7 +19,7 @@
 # product configuration (apps).
 #
 
-SELINUX_IGNORE_NEVERALLOWS := true
+# SELINUX_IGNORE_NEVERALLOWS := true
 
 # GApps
 WITH_GAPPS := true
