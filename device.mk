@@ -287,6 +287,10 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
+# Manifest
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vendor/etc/vintf/manifest.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/30/etc/vintf/manifest.xml
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_vendor.xml:system/etc/media_profiles_vendor.xml
@@ -300,7 +304,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.asus_msmnile
+    android.hardware.power-service-asus_msmnile \
+    android.hardware.power-service-asus_msmnile.rc \
+    power.xml
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
