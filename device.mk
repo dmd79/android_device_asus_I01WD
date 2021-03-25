@@ -181,6 +181,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk_package
 
+# Offline charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
