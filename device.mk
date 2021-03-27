@@ -97,9 +97,17 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    libdisplayconfig.qti \
+    libgralloc.qti \
     libion \
+    libqdMetaData \
     libtinyxml2 \
-    vendor.display.config@1.0
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0
+
+# DRM
+PRODUCT_PACKAGES += \
+    libdrm
 
 PRODUCT_PACKAGES += \
     libtinyalsa
