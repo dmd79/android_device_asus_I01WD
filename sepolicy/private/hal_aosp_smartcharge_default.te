@@ -1,0 +1,4 @@
+type vendor_sysfs_battery_supply, sysfs_type, fs_type;
+
+allow hal_aosp_smartcharge_default vendor_sysfs_battery_supply:dir search;
+allow hal_aosp_smartcharge_default vendor_sysfs_battery_supply:file { getattr open read write };
