@@ -22,8 +22,7 @@
 # SELINUX_IGNORE_NEVERALLOWS := true
 
 # GApps
-WITH_CUSTOM_GAPPS := true
-$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+WITH_CORE_GAPPS := true
 
 # Sample: This is where we'd set a backup provider if we had one
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
