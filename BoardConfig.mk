@@ -146,7 +146,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
 
 # Treble
