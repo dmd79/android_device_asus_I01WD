@@ -27,6 +27,7 @@ $(call inherit-product, vendor/asus/zenfone6/zenfone6-vendor.mk)
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # A/B
 AB_OTA_UPDATER := true
