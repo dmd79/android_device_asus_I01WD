@@ -247,6 +247,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libnl \
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
