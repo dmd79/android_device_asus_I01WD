@@ -79,7 +79,8 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    CameraTile
+    CameraTile \
+    android.hardware.camera.provider@2.4
 
 # Crypto
 PRODUCT_PACKAGES += \
