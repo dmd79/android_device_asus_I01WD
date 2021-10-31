@@ -21,6 +21,8 @@
 #
 $(call inherit-product, vendor/asus/zenfone6/zenfone6-vendor.mk)
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Overlays
  DEVICE_PACKAGE_OVERLAYS += \
      $(LOCAL_PATH)/overlay
