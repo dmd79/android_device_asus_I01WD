@@ -243,3 +243,6 @@ persist.google.assistant.enable=1
 sys.vendor.qti.servicetracker.disable=true
 ro.charger.enable_suspend=true
 ro.charger.disable_init_blank=true
+
+# Pre-rendering
+ro.vendor.perf.scroll_opt=true
