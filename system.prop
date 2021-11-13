@@ -247,5 +247,8 @@ ro.charger.disable_init_blank=true
 # Graphics
 debug.cpurend.vsync=false
 
+# One handed mode
+ro.support_one_handed_mode=true
+
 # Pre-rendering
 ro.vendor.perf.scroll_opt=true
