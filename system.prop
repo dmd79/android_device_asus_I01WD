@@ -244,5 +244,8 @@ sys.vendor.qti.servicetracker.disable=true
 ro.charger.enable_suspend=true
 ro.charger.disable_init_blank=true
 
+# Graphics
+debug.cpurend.vsync=false
+
 # Pre-rendering
 ro.vendor.perf.scroll_opt=true
