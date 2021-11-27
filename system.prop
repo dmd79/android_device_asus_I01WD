@@ -105,7 +105,7 @@ debug.sdm.support_writeback=0
 debug.sf.latch_unsignaled=1
 
 # enable tunnel encoding for amrwb
-tunnel.audio.encode = true
+tunnel.audio.encode=true
 
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
@@ -160,7 +160,7 @@ persist.vendor.sensors.enable.mag_filter=true
 debug.stagefright.ccodec=1
 
 #Property to set native recorder's maximum base layer fps
-ro.media.recorder-max-base-layer-fps = 60
+ro.media.recorder-max-base-layer-fps=60
 
 #Touch Property
 persist.vendor.systemui.skiptouch=false
@@ -234,7 +234,7 @@ persist.vendor.asus.startlog=0
 # [ASUS BSP] Debug
 
 #Enable Qualcomm mdp rotator
-vendor.display.enable_rotator_ui = 1
+vendor.display.enable_rotator_ui=1
 
 # Extra Asus
 ro.build.asus.sku=WW
